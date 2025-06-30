@@ -12,13 +12,20 @@ The stepper motor's shaft position is dynamically controlled using a potentiomet
 
 ##  Hardware Used
 
-| Component             | Details                                             |
-|----------------------|-----------------------------------------------------|
-| **Microcontroller**  | Arduino Uno                                         |
-| **Motor Driver**     | L298N Dual H-Bridge                                 |
-| **Stepper Motor**    | Bipolar stepper (5–6V, ~3.6Ω coils, ~1.4A max)      |
-| **Potentiometers**   | 4x 10kΩ (Position, Kp, Ki, Kd)                       |
-| **Power Supply**     | 5V–6V, capable of supplying 1.5A for the motor      |
+| Component             | Details                                                                                       |
+|----------------------|-----------------------------------------------------------------------------------------------|
+| **Microcontroller**  | Arduino Uno                                                                                   |
+| **Motor Driver**     | L298N Dual H-Bridge                                                                           |
+| **Stepper Motor**    | [EM-483 bipolar stepper motor](https://www.instructables.com/EM-483-Specifications/) (5–6V, ~3.6Ω coils, ~1.4A max) |
+| **Potentiometers**   | 4x 10kΩ (Position, Kp, Ki, Kd)                                                                 |
+| **Power Supply**     | 5V–6V, capable of supplying 1.5A for the motor                                                |
+
+...
+
+##  References
+
+- [EM-483 Stepper Motor Specifications – Instructables](https://www.instructables.com/EM-483-Specifications/)
+
 
 ---
 
