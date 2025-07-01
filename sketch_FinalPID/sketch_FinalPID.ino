@@ -1,4 +1,14 @@
-// ===== PID-Controlled Stepper with Live Tuning via 4 Potentiometers =====
+/* =============================================================================
+  PID-Controlled Stepper Motor with Live Tuning via 4 Potentiometers
+  ------------------------------------------------------------------------------
+  Author      : Mehdi Moallemkolaei (GitHub: https://github.com/ACE-ALCH)
+  Description : Real-time stepper motor position control using PID algorithm.
+                Kp, Ki, and Kd values are tuned live with potentiometers.
+                Serial output supports real-time plotting and debugging.
+  Last Edit   : 2025-06-30
+  License     : MIT License
+  Version     : 1.4
+============================================================================= */
 
 #define IN1 8
 #define IN2 9
