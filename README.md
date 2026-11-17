@@ -1,5 +1,5 @@
 <div align="center">
-<img src="portfolio-assets/cover.svg" width="100%" alt="PID-Controlled Stepper Motor project cover">
+<img src="https://raw.githubusercontent.com/Ace-Alch/Ace-Alch.github.io/main/banners/PID_StepperMotor.webp" width="100%" alt="PID_StepperMotor — concept artwork">
 
 # PID-Controlled Stepper Motor
 
