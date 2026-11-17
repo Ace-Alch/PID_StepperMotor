@@ -1,0 +1,24 @@
+{
+  "slug": "PID_StepperMotor",
+  "name": "Motion bench",
+  "motif": "stepper",
+  "background": "#eef0e9",
+  "ink": "#27392f",
+  "accent": "#31684b",
+  "layout": "hardware",
+  "canvas": {
+    "width": 3840,
+    "height": 1440,
+    "viewBox": [
+      0,
+      0,
+      1920,
+      720
+    ]
+  },
+  "font": "Arial",
+  "contrast": {
+    "body": 10.67,
+    "accent": 5.69
+  }
+}
