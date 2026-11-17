@@ -1,61 +1,78 @@
-#  PID-Controlled Stepper Motor with Live Tuning (Arduino + L298N)
+<div align="center">
+<img src="portfolio-assets/cover.svg" width="100%" alt="PID-Controlled Stepper Motor project cover">
 
-This project demonstrates a **real-time PID-controlled bipolar stepper motor** using Arduino, an L298N motor driver, and four potentiometers for dynamic tuning of position and PID gains.
+# PID-Controlled Stepper Motor
 
----
+**Demonstrate PID calculations and live gain adjustment with an Arduino and stepper driver.**
 
-##  Overview
+Arduino Uno · L298N · PID · C++
 
-The stepper motor's shaft position is dynamically controlled using a potentiometer. The system uses a PID algorithm to ensure smooth and accurate tracking. Three additional potentiometers allow for **live tuning of Kp, Ki, and Kd**, making it an interactive and educational demonstration of closed-loop control.
+[Overview](#overview) · [Design](portfolio/DESIGN.md) · [Setup](portfolio/SETUP.md) · [Validation](portfolio/VALIDATION.md) · [Evidence](portfolio/EVIDENCE.md)
+</div>
 
----
+## Overview
 
-##  Hardware Used
+| Item | Record |
+| :-- | :-- |
+| Project type | Control demonstrator |
+| Field | Engineering |
+| Material in this package | Existing repository inspected |
+| Documentation review | 17 November 2026 |
 
-| Component             | Details                                                                                       |
-|----------------------|-----------------------------------------------------------------------------------------------|
-| **Microcontroller**  | Arduino Uno                                                                                   |
-| **Motor Driver**     | L298N Dual H-Bridge                                                                           |
-| **Stepper Motor**    | [EM-483 bipolar stepper motor](https://www.instructables.com/EM-483-Specifications/) (5–6V, ~3.6Ω coils, ~1.4A max) |
-| **Potentiometers**   | 4x 10kΩ (Position, Kp, Ki, Kd)                                                                 |
-| **Power Supply**     | 5V–6V, capable of supplying 1.5A for the motor                                                |
+## Scope
 
-...
+Demonstrate PID calculations and live gain adjustment with an Arduino and stepper driver. The documentation separates the stated project scope, inspected artifacts and future work. A listed feature is not a new test result.
 
-##  References
+### Main elements
 
-- [EM-483 Stepper Motor Specifications – Instructables](https://www.instructables.com/EM-483-Specifications/)
+- Target potentiometer
+- Gain potentiometers
+- PID calculation
+- Step sequence
+- Commanded step count
 
+## Start here
 
----
+1. Read the [design record](portfolio/DESIGN.md) for the system elements and boundaries.
+2. Follow the [setup record](portfolio/SETUP.md) for available entry points.
+3. Use the [validation plan](portfolio/VALIDATION.md) to record reproducible results.
+4. Check the [evidence register](portfolio/EVIDENCE.md) before reusing claims.
 
-##  Wiring Diagram
+## Technical limits
 
-| Arduino Pin | Connected To            |
-|-------------|-------------------------|
-| D8–D11      | L298N IN1–IN4 (Motor)   |
-| A0          | Position potentiometer  |
-| A1          | Kp tuning pot           |
-| A2          | Ki tuning pot           |
-| A3          | Kd tuning pot           |
-| 5V / GND    | All pots and L298N VCC  |
+The source updates `currentPosition` when it commands a step. It does not read an encoder. The reported position is a commanded step count. It cannot detect missed steps or prove physical closed-loop position control. The integral has no anti-windup bound. The move loop can block input sampling.
 
-Below is the wiring diagram for the project (Arduino Uno + L298N + Stepper Motor + 4 Potentiometers):
+## Project preview
 
-![Wiring Diagram](images/wiring.png)
+![Project artifact](images/wiring.png)
 
+This image is an existing repository artifact. It is not evidence of a new test.
 
----
+## Available material
 
-##  PID Control Logic
+| Path | Type |
+| :-- | :-- |
+| [LICENSE](https://github.com/Ace-Alch/PID_StepperMotor/blob/main/LICENSE) | file |
+| [README.md](https://github.com/Ace-Alch/PID_StepperMotor/blob/main/README.md) | .md |
+| [images/wiring.png](https://github.com/Ace-Alch/PID_StepperMotor/blob/main/images/wiring.png) | .png |
+| [results/P.gif](https://github.com/Ace-Alch/PID_StepperMotor/blob/main/results/P.gif) | .gif |
+| [results/PD.gif](https://github.com/Ace-Alch/PID_StepperMotor/blob/main/results/PD.gif) | .gif |
+| [results/PID.gif](https://github.com/Ace-Alch/PID_StepperMotor/blob/main/results/PID.gif) | .gif |
+| [results/PID_opt.gif](https://github.com/Ace-Alch/PID_StepperMotor/blob/main/results/PID_opt.gif) | .gif |
+| [results/README.md](https://github.com/Ace-Alch/PID_StepperMotor/blob/main/results/README.md) | .md |
+| [sketch_FinalPID/sketch_FinalPID.ino](https://github.com/Ace-Alch/PID_StepperMotor/blob/main/sketch_FinalPID/sketch_FinalPID.ino) | .ino |
 
-The control system continuously:
-1. Reads the desired position from a potentiometer.
-2. Calculates the current error based on actual vs target steps.
-3. Computes a PID output signal.
-4. Converts the signal into a series of timed stepper motor pulses.
-5. Updates the motor in real-time to minimize the position error.
+See the [complete source inventory](portfolio/SOURCE-INVENTORY.md) for all inspected file paths.
 
-### PID Formula:
-```text
-Output = Kp * error + Ki * ∫error + Kd * d(error)/dt
+## Next work
+
+- [ ] Independent shaft feedback
+- [ ] Current and thermal checks
+- [ ] Position limits
+- [ ] Reproduced tuning measurements
+
+## Credits and reuse
+
+Project record: Mehdi Moallemkolaei. Specific third-party and course contributions must retain their original notices.
+
+Existing license terms remain in effect. This package does not grant a new license over source code, course material, models or datasets. See [reuse and contribution notes](portfolio/CONTRIBUTIONS.md).
